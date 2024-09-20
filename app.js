@@ -75,11 +75,11 @@ app.get("/excluir/:id", function(req, res){
     )
 })
 
-app.get("/excluir", function(req, res){
-    post.destroy({where: {'id': req.body.id}}).then(
+app.post("/metodo_excluir/:id", function(req, res){
+    post.destroy({where: {id: req.body.id}}).then(
         function(){
             console.log("Dados excluidos com sucesso")
-            res.render("consulta")
+            res.render("primeira_pagina")
         }
     )
 })
